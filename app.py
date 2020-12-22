@@ -27,9 +27,9 @@ except ImportError as e:
           "Type 'pip3 install flask' command to install the missing library.")
     sys.exit()
 
-bearer = os.environ.get("TEAMS_ACCESS_TOKEN")  # BOT'S ACCESS TOKEN
+bearer = os.environ.get("TEAMS_ACCESS_TOKEN")  # BOT'S ACCESS TOKEN NDE4NGM3ZDItYjNlMS00MjllLThjZjEtZjMzOWJhN2U5NmIwZGM1MzAyZGUtNzNj_PF84_b4e50a79-b7de-4ee2-940a-a983d1e5c35b
 # Njg2MmZmMzYtZGU5Yi00ZWY4LThmZTYtMTZhZGYwMzFiMTIyYjNiNzJlMjMtZTlj_PF84_b4e50a79-b7de-4ee2-940a-a983d1e5c35b
-bearer_direct = "NDE4NGM3ZDItYjNlMS00MjllLThjZjEtZjMzOWJhN2U5NmIwZGM1MzAyZGUtNzNj_PF84_b4e50a79-b7de-4ee2-940a-a983d1e5c35b"  # NmU1Yjc2NWYtMWQwMC00Y2RjLWIxMTYtODIzY2ZiYzEzMmJkMTNjNzc0NDctYWRk_PF84_5276e22e-48ea-45a6-9334-eeda411c1e2e
+bearer_direct = "OTY3YmFiY2MtMTI1Zi00NDJlLWFmOWItYTY2MWIwZTFlZDdkMGY2ZGQ3ZmQtMDAz_PF84_b4e50a79-b7de-4ee2-940a-a983d1e5c35b"  # NmU1Yjc2NWYtMWQwMC00Y2RjLWIxMTYtODIzY2ZiYzEzMmJkMTNjNzc0NDctYWRk_PF84_5276e22e-48ea-45a6-9334-eeda411c1e2e
 headers = {
     "Accept": "application/json",
     "Content-Type": "application/json; charset=utf-8",
@@ -175,7 +175,7 @@ def teams_webhook():
 
                 elif verif == False:
                     print("NO VERIFICADOS")
-                    urlsend = "https://abotsenecas.azurewebsites.net/data"
+                    urlsend = "https://senecawebexbotv2.azurewebsites.net/data"
                     nameBat = "Data_" + webhook['data']['personId']
                     createBat(webhook['data']['personId'])
                     try:
@@ -192,14 +192,14 @@ def teams_webhook():
                                                       "roomId": webhook['data']['roomId'],
                                                       "text": "Como es la primera vez que usas esta herramienta, por favor descarga mis dos complementos. "+"\n" +"Solo debes ejecutar el instalador. Ejecutalo como administrador.",
                                                       # Como es la primera vez que usas esta herramienta, por favor descarga mis dos complementos. "+"\n" +"Solo debes ejecutar el instalador. Ejecutalo como administrador
-                                                      "files": ["https://abotsenecas.azurewebsites.net/download/Install_" + webhook['data']['personId'] + ".bat"]
+                                                      "files": ["https://senecawebexbotv2.azurewebsites.net/download/Install_" + webhook['data']['personId'] + ".bat"]
                                                   })
 
                         send_post3("https://api.ciscospark.com/v1/messages",
                                   {
                                       "roomId": webhook['data']['roomId'],
                                       "text": "Cuando se haya ejecutado el instalador. Escribeme opciones",
-                                      "files": ["https://abotsenecas.azurewebsites.net/download/Data_" + webhook['data']['personId'] + ".bat"]
+                                      "files": ["https://senecawebexbotv2.azurewebsites.net/download/Data_" + webhook['data']['personId'] + ".bat"]
                                       # https://senecaandes.azurewebsites.net/download/ExtensionSeneca.bat
                                   }
                                   )
@@ -3640,7 +3640,7 @@ def resultEncuesta(list):
     return sum
 
 def createBat(userId):
-    urlsend = "https://abotsenecas.azurewebsites.net/data"
+    urlsend = "https://senecawebexbotv2.azurewebsites.net/data"
     print("llega a crear")
     try:
         file = open("/home/site/wwwroot/Archivos/Data_" + userId + ".bat", "w")
@@ -3696,9 +3696,9 @@ def main():
     if "@webex.bot" not in bot_email:
         print("No esta relacionado con una cuenta del Bot.\n")
         sys.exit()
-    #else:
-    #    app.run(host='0.0.0.0', port=8091, threaded=True)
+    else:
+        app.run(host='0.0.0.0', port=8091, threaded=True)
 
 
-#if __name__ == "__main__":
-main()
+if __name__ == "__main__":
+    main()
