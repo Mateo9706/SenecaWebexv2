@@ -1,0 +1,8 @@
+Flask==1.1.1
+requests==2.24.0
+speedtest-cli==2.1.2
+pyspeedtest==1.2.7
+pyodbc==4.0.30
+
+
+
