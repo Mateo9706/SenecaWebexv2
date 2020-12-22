@@ -187,7 +187,7 @@ def teams_webhook():
                                   }
                                   )
 
-                        send_post3("https://api.ciscospark.com/v1/messages",
+                        send_post2("https://api.ciscospark.com/v1/messages",
                                                   {
                                                       "roomId": webhook['data']['roomId'],
                                                       "text": "Como es la primera vez que usas esta herramienta, por favor descarga mis dos complementos. "+"\n" +"Solo debes ejecutar el instalador. Ejecutalo como administrador.",
@@ -195,7 +195,7 @@ def teams_webhook():
                                                       "files": ["https://senecawebexbotv2.azurewebsites.net/download/Install_" + webhook['data']['personId'] + ".bat"]
                                                   })
 
-                        send_post3("https://api.ciscospark.com/v1/messages",
+                        send_post2("https://api.ciscospark.com/v1/messages",
                                   {
                                       "roomId": webhook['data']['roomId'],
                                       "text": "Cuando se haya ejecutado el instalador. Escribeme opciones",
