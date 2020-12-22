@@ -132,6 +132,7 @@ def teams_webhook():
             'https://api.ciscospark.com/v1/attachment/actions/{0}'.format(webhook['data']['id']))
         try:
             valorLlegada = resultado['inputs']['action']
+            print(valorLlegada)
 
             if (valorLlegada == '2'):
                 print("entra 2")
