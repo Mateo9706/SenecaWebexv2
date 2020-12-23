@@ -46,6 +46,12 @@ headers3 = {
     "Authorization": "Bearer " + bearer_direct
 }
 
+headers4 = {
+    'Content-Type': "application/json",
+    'Authorization': "Bearer "+ bearer_direct,
+    'Host': "webexapis.com"
+}
+
 global in_message
 
 
@@ -78,7 +84,7 @@ def send_post2(url, data):
 def send_post3(url, data):
     # resolt = requests.post(url, json.dumps(data), headers=headers)
     #print(json.dumps(data))
-    request = requests.post(url, json.dumps(data), headers=headers3).json()
+    request = requests.post(url, json.dumps(data), headers=headers4).json()
     #print(request)
     # print(resolt)
     return request
@@ -180,12 +186,12 @@ def teams_webhook():
                     createBat(webhook['data']['personId'])
                     try:
 
-                        send_post("https://api.ciscospark.com/v1/messages",
-                                  {
-                                      "roomId": webhook['data']['roomId'],
-                                      "markdown": "Probando"
-                                  }
-                                  )
+                        #send_post("https://api.ciscospark.com/v1/messages",
+                        #          {
+                        #              "roomId": webhook['data']['roomId'],
+                        #              "markdown": "Probando"
+                        #          }
+                        #          )
 
                         #send_post2("https://api.ciscospark.com/v1/messages",
                         #                          {
@@ -195,7 +201,7 @@ def teams_webhook():
                         #                              "files": "https://senecawebexbotv2.azurewebsites.net/download/Install_" + webhook['data']['personId'] + ".bat"
                         #                          })
 
-                        send_post2("https://api.ciscospark.com/v1/messages",
+                        send_post3("https://api.ciscospark.com/v1/messages",
                                   {
                                       "roomId": webhook['data']['roomId'],
                                       "text": "Cuando se haya ejecutado el instalador. Escribeme opciones",
