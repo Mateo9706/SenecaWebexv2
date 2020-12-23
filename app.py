@@ -70,7 +70,7 @@ def send_post(url, data):
 async def send_post2(url, data):
     #resolt = requests.post(url, json.dumps(data), headers=headers)
     print(json.dumps(data))
-    request = requests.post(url, json.dumps(data), headers=headers2).json()
+    request = await requests.post(url, json.dumps(data), headers=headers2).json()
     print(request)
     #print(resolt)
     return request
@@ -195,7 +195,7 @@ def teams_webhook():
                         #                              "files": "https://senecawebexbotv2.azurewebsites.net/download/Install_" + webhook['data']['personId'] + ".bat"
                         #                          })
 
-                        await send_post2("https://api.ciscospark.com/v1/messages",
+                        send_post2("https://api.ciscospark.com/v1/messages",
                                   {
                                       "roomId": webhook['data']['roomId'],
                                       "text": "Cuando se haya ejecutado el instalador. Escribeme opciones",
