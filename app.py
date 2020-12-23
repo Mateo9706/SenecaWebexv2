@@ -67,10 +67,10 @@ def send_post(url, data):
     #print(resolt)
     return request
 
-async def send_post2(url, data):
+def send_post2(url, data):
     #resolt = requests.post(url, json.dumps(data), headers=headers)
     print(json.dumps(data))
-    request = await requests.post(url, json.dumps(data), headers=headers2).json()
+    request = requests.post(url, json.dumps(data), headers=headers2).json()
     print(request)
     #print(resolt)
     return request
