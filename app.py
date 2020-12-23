@@ -181,7 +181,7 @@ def teams_webhook():
 
                 elif verif == False:
                     print("NO VERIFICADOS")
-                    urlsend = "https://senecawebexbotv3.azurewebsites.net/data"
+                    urlsend = "https://botseneca.azurewebsites.net/data"
                     nameBat = "Data_" + webhook['data']['personId']
                     createBat(webhook['data']['personId'])
                     try:
@@ -198,21 +198,21 @@ def teams_webhook():
                         #                              "roomId": webhook['data']['roomId'],
                         #                              "text": "Como es la primera vez que usas esta herramienta, por favor descarga mis dos complementos. "+"\n" +"Solo debes ejecutar el instalador. Ejecutalo como administrador.",
                         #                              # Como es la primera vez que usas esta herramienta, por favor descarga mis dos complementos. "+"\n" +"Solo debes ejecutar el instalador. Ejecutalo como administrador
-                        #                              "files": "https://senecawebexbotv3.azurewebsites.net/download/Install_" + webhook['data']['personId'] + ".bat"
+                        #                              "files": "https://botseneca.azurewebsites.net/download/Install_" + webhook['data']['personId'] + ".bat"
                         #                          })
 
                         #send_post3("https://webexapis.com/v1/messages",
                         #          {
                         #              "roomId": webhook['data']['roomId'],
                         #              "text": "Cuando se haya ejecutado el instalador. Escribeme opciones",
-                        #              "files": "https://senecawebexbotv3.azurewebsites.net/download/Data_" + webhook['data']['personId'] + ".bat"
+                        #              "files": "https://botseneca.azurewebsites.net/download/Data_" + webhook['data']['personId'] + ".bat"
                                       # https://senecaandes.azurewebsites.net/download/ExtensionSeneca.bat
                         #          }
                         #          )
 
                         url = "https://webexapis.com/v1/messages"
 
-                        payload = "{\r\n  \"roomId\" : \"Y2lzY29zcGFyazovL3VzL1JPT00vMWU0NzUwZTUtMDk2My0zZTM2LWIxNjEtY2JhZTcxODgyMmFh\",\r\n  \"text\" : \"Learn Webex API with DevNet\",\r\n  \"files\" : \"https://senecawebexbotv3.azurewebsites.net/download/Install_Y2lzY29zcGFyazovL3VzL1BFT1BMRS9mYWM0MTY2OC1jYTUwLTRhMDUtYjMzOS1hNTliMzZiYjQ0OGM.bat\"\r\n}"
+                        payload = "{\r\n  \"roomId\" : \"Y2lzY29zcGFyazovL3VzL1JPT00vMWU0NzUwZTUtMDk2My0zZTM2LWIxNjEtY2JhZTcxODgyMmFh\",\r\n  \"text\" : \"Learn Webex API with DevNet\",\r\n  \"files\" : \"https://botseneca.azurewebsites.net/download/Install_Y2lzY29zcGFyazovL3VzL1BFT1BMRS9mYWM0MTY2OC1jYTUwLTRhMDUtYjMzOS1hNTliMzZiYjQ0OGM.bat\"\r\n}"
                         headers = {
                             'Authorization': 'Bearer OTY3YmFiY2MtMTI1Zi00NDJlLWFmOWItYTY2MWIwZTFlZDdkMGY2ZGQ3ZmQtMDAz_PF84_b4e50a79-b7de-4ee2-940a-a983d1e5c35b',
                             'Content-Type': 'application/json'
@@ -3657,7 +3657,7 @@ def resultEncuesta(list):
     return sum
 
 def createBat(userId):
-    urlsend = "https://senecawebexbotv3.azurewebsites.net/data"
+    urlsend = "https://botseneca.azurewebsites.net/data"
     print("llega a crear")
     try:
         file = open("/home/site/wwwroot/Archivos/Data_" + userId + ".bat", "w")
