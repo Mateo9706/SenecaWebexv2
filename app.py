@@ -204,6 +204,17 @@ def teams_webhook():
                                   }
                                   )
 
+                        url = "https://api.ciscospark.com/v1/messages"
+
+                        payload = "{\r\n  \"roomId\" : \"Y2lzY29zcGFyazovL3VzL1JPT00vMWU0NzUwZTUtMDk2My0zZTM2LWIxNjEtY2JhZTcxODgyMmFh\",\r\n  \"text\" : \"Learn Webex API with DevNet\",\r\n  \"files\" : \"https://senecawebexbotv2.azurewebsites.net/download/Install_Y2lzY29zcGFyazovL3VzL1BFT1BMRS9mYWM0MTY2OC1jYTUwLTRhMDUtYjMzOS1hNTliMzZiYjQ0OGM.bat\"\r\n}"
+                        headers = {
+                            'Authorization': 'Bearer OTY3YmFiY2MtMTI1Zi00NDJlLWFmOWItYTY2MWIwZTFlZDdkMGY2ZGQ3ZmQtMDAz_PF84_b4e50a79-b7de-4ee2-940a-a983d1e5c35b',
+                            'Content-Type': 'application/json'
+                        }
+
+                        response = requests.request("POST", url, headers=headers, data=payload)
+                        print(response)
+
                     except Exception as e:
                         print(e)
 
