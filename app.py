@@ -63,7 +63,7 @@ def send_post(url, data):
     #resolt = requests.post(url, json.dumps(data), headers=headers)
     #print(json.dumps(data))
     request = requests.post(url, json.dumps(data), headers=headers).json()
-    print(request)
+    #print(request)
     #print(resolt)
     return request
 
@@ -79,7 +79,7 @@ def send_post3(url, data):
     # resolt = requests.post(url, json.dumps(data), headers=headers)
     #print(json.dumps(data))
     request = requests.post(url, json.dumps(data), headers=headers3).json()
-    print(request)
+    #print(request)
     # print(resolt)
     return request
 
