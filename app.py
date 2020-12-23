@@ -77,7 +77,7 @@ async def send_post2(url, data):
 
 def send_post3(url, data):
     # resolt = requests.post(url, json.dumps(data), headers=headers)
-    print(json.dumps(data))
+    #print(json.dumps(data))
     request = requests.post(url, json.dumps(data), headers=headers3).json()
     print(request)
     # print(resolt)
