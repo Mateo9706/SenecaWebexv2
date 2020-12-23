@@ -84,7 +84,7 @@ def send_post2(url, data):
 def send_post3(url, data):
     # resolt = requests.post(url, json.dumps(data), headers=headers)
     #print(json.dumps(data))
-    request = requests.post(url, json.dumps(data), headers=headers4).json()
+    request = requests.post(url, json.dumps(data), headers=headers2).json()
     #print(request)
     # print(resolt)
     return request
