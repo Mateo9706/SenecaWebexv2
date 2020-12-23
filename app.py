@@ -61,7 +61,7 @@ def send_get(url, payload=None, js=True):
 
 def send_post(url, data):
     #resolt = requests.post(url, json.dumps(data), headers=headers)
-    print(json.dumps(data))
+    #print(json.dumps(data))
     request = requests.post(url, json.dumps(data), headers=headers).json()
     print(request)
     #print(resolt)
