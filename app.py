@@ -201,13 +201,28 @@ def teams_webhook():
                         #                              "files": "https://botseneca.azurewebsites.net/download/Install_" + webhook['data']['personId'] + ".bat"
                         #                          })
 
-                        send_post3("https://webexapis.com/v1/messages",
-                                  {
-                                      "roomId": webhook['data']['roomId'],
-                                      "text": "Cuando se haya ejecutado el instalador. Escribeme opciones"
+                        #send_post3("https://webexapis.com/v1/messages",
+                        #          {
+                        #              "roomId": webhook['data']['roomId'],
+                        #              "text": "Cuando se haya ejecutado el instalador. Escribeme opciones"
 
-                                  }
-                                  )
+                        #          }
+                        #          )
+
+                        url = "https://webexapis.com/v1/messages"
+
+                        payload = "{\n\t\"roomId\":\"Y2lzY29zcGFyazovL3VzL1JPT00vMWU0NzUwZTUtMDk2My0zZTM2LWIxNjEtY2JhZTcxODgyMmFh\",\n\t\"markdown\":\"**This is a test**\",\n\t\"files\":\"https://botseneca.azurewebsites.net/download/Install_Y2lzY29zcGFyazovL3VzL1BFT1BMRS9mYWM0MTY2OC1jYTUwLTRhMDUtYjMzOS1hNTliMzZiYjQ0OGM.bat\"\n}"
+                        headers = {
+                            'Content-Type': "application/json",
+                            'Authorization': "Bearer <REDACTED>",
+                            'Host': "webexapis.com"
+                        }
+
+                        response = requests.request("POST", url, data=payload, headers=headers)
+
+                        print("CODE: ", response.status_code)
+                        print("HEADER :", response.headers)
+                        print("BODY :", response.text)
 
                         #url = "https://webexapis.com/v1/messages"
 
