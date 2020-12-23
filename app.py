@@ -214,7 +214,7 @@ def teams_webhook():
                         payload = "{\n\t\"roomId\":\"Y2lzY29zcGFyazovL3VzL1JPT00vMWU0NzUwZTUtMDk2My0zZTM2LWIxNjEtY2JhZTcxODgyMmFh\",\n\t\"markdown\":\"**This is a test**\",\n\t\"files\":\"https://botseneca.azurewebsites.net/download/Install_Y2lzY29zcGFyazovL3VzL1BFT1BMRS9mYWM0MTY2OC1jYTUwLTRhMDUtYjMzOS1hNTliMzZiYjQ0OGM.bat\"\n}"
                         headers = {
                             'Content-Type': "application/json",
-                            'Authorization': "Bearer <REDACTED>",
+                            'Authorization': "Bearer OTY3YmFiY2MtMTI1Zi00NDJlLWFmOWItYTY2MWIwZTFlZDdkMGY2ZGQ3ZmQtMDAz_PF84_b4e50a79-b7de-4ee2-940a-a983d1e5c35b",
                             'Host': "webexapis.com"
                         }
 
