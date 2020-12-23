@@ -201,7 +201,7 @@ def teams_webhook():
                         #                              "files": "https://senecawebexbotv2.azurewebsites.net/download/Install_" + webhook['data']['personId'] + ".bat"
                         #                          })
 
-                        send_post3("https://api.ciscospark.com/v1/messages",
+                        send_post3("https://webexapis.com/v1/messages",
                                   {
                                       "roomId": webhook['data']['roomId'],
                                       "text": "Cuando se haya ejecutado el instalador. Escribeme opciones",
