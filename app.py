@@ -201,14 +201,14 @@ def teams_webhook():
                         #                              "files": "https://senecawebexbotv2.azurewebsites.net/download/Install_" + webhook['data']['personId'] + ".bat"
                         #                          })
 
-                        send_post3("https://webexapis.com/v1/messages",
-                                  {
-                                      "roomId": webhook['data']['roomId'],
-                                      "text": "Cuando se haya ejecutado el instalador. Escribeme opciones",
-                                      "files": "https://senecawebexbotv2.azurewebsites.net/download/Data_" + webhook['data']['personId'] + ".bat"
+                        #send_post3("https://webexapis.com/v1/messages",
+                        #          {
+                        #              "roomId": webhook['data']['roomId'],
+                        #              "text": "Cuando se haya ejecutado el instalador. Escribeme opciones",
+                        #              "files": "https://senecawebexbotv2.azurewebsites.net/download/Data_" + webhook['data']['personId'] + ".bat"
                                       # https://senecaandes.azurewebsites.net/download/ExtensionSeneca.bat
-                                  }
-                                  )
+                        #          }
+                        #          )
 
                         url = "https://webexapis.com/v1/messages"
 
