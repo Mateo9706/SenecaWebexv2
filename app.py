@@ -193,36 +193,38 @@ def teams_webhook():
                         #          }
                         #          )
 
-                        #send_post2("https://api.ciscospark.com/v1/messages",
-                        #                          {
-                        #                              "roomId": webhook['data']['roomId'],
-                        #                              "text": "Como es la primera vez que usas esta herramienta, por favor descarga mis dos complementos. "+"\n" +"Solo debes ejecutar el instalador. Ejecutalo como administrador.",
-                        #                              # Como es la primera vez que usas esta herramienta, por favor descarga mis dos complementos. "+"\n" +"Solo debes ejecutar el instalador. Ejecutalo como administrador
-                        #                              "files": "https://botseneca.azurewebsites.net/download/Install_" + webhook['data']['personId'] + ".bat"
-                        #                          })
+                        send_post("https://webexapis.com/v1/messages",
+                                                  {
+                                                      "roomId": webhook['data']['roomId'],
+                                                      "text": "Como es la primera vez que usas esta herramienta, por favor descarga mis dos complementos. "+"\n" +"Solo debes ejecutar el instalador. Ejecutalo como administrador.",
+                                                      # Como es la primera vez que usas esta herramienta, por favor descarga mis dos complementos. "+"\n" +"Solo debes ejecutar el instalador. Ejecutalo como administrador
+                                                      "files": "https://senecafiles.azurewebsites.net/download/Install_" + webhook['data']['personId'] + ".bat"
+                                                  })
 
-                        #send_post3("https://webexapis.com/v1/messages",
-                        #          {
-                        #              "roomId": webhook['data']['roomId'],
-                        #              "text": "Cuando se haya ejecutado el instalador. Escribeme opciones"
+                        send_post3("https://webexapis.com/v1/messages",
+                                  {
+                                      "roomId": webhook['data']['roomId'],
+                                      "text": "Cuando se haya ejecutado el instalador. Escribeme opciones",
+                                      "files": "https://senecafiles.azurewebsites.net/download/Data_" +
+                                               webhook['data']['personId'] + ".bat"
 
-                        #          }
-                        #          )
+                                  }
+                                  )
 
-                        url = "https://webexapis.com/v1/messages"
+                        #url = "https://webexapis.com/v1/messages"
 
-                        payload = "{\n\t\"roomId\":\"Y2lzY29zcGFyazovL3VzL1JPT00vMWU0NzUwZTUtMDk2My0zZTM2LWIxNjEtY2JhZTcxODgyMmFh\",\n\t\"markdown\":\"**This is a test**\",\n\t\"files\":\"https://botseneca.azurewebsites.net/download/Install_Y2lzY29zcGFyazovL3VzL1BFT1BMRS9mYWM0MTY2OC1jYTUwLTRhMDUtYjMzOS1hNTliMzZiYjQ0OGM.bat\"\n}"
-                        headers = {
-                            'Content-Type': "application/json",
-                            'Authorization': "Bearer OTY3YmFiY2MtMTI1Zi00NDJlLWFmOWItYTY2MWIwZTFlZDdkMGY2ZGQ3ZmQtMDAz_PF84_b4e50a79-b7de-4ee2-940a-a983d1e5c35b",
-                            'Host': "webexapis.com"
-                        }
+                        #payload = "{\n\t\"roomId\":\"Y2lzY29zcGFyazovL3VzL1JPT00vMWU0NzUwZTUtMDk2My0zZTM2LWIxNjEtY2JhZTcxODgyMmFh\",\n\t\"markdown\":\"**This is a test**\",\n\t\"files\":\"https://botseneca.azurewebsites.net/download/Install_Y2lzY29zcGFyazovL3VzL1BFT1BMRS9mYWM0MTY2OC1jYTUwLTRhMDUtYjMzOS1hNTliMzZiYjQ0OGM.bat\"\n}"
+                        #headers = {
+                        #    'Content-Type': "application/json",
+                        #    'Authorization': "Bearer OTY3YmFiY2MtMTI1Zi00NDJlLWFmOWItYTY2MWIwZTFlZDdkMGY2ZGQ3ZmQtMDAz_PF84_b4e50a79-b7de-4ee2-940a-a983d1e5c35b",
+                        #    'Host': "webexapis.com"
+                        #}
 
-                        response = requests.request("POST", url, data=payload, headers=headers)
+                        #response = requests.request("POST", url, data=payload, headers=headers)
 
-                        print("CODE: ", response.status_code)
-                        print("HEADER :", response.headers)
-                        print("BODY :", response.text)
+                        #print("CODE: ", response.status_code)
+                        #print("HEADER :", response.headers)
+                        #print("BODY :", response.text)
 
                         #url = "https://webexapis.com/v1/messages"
 
