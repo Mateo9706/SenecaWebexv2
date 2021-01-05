@@ -183,7 +183,8 @@ def teams_webhook():
                     print("NO VERIFICADOS")
                     urlsend = "https://botseneca.azurewebsites.net/data"
                     nameBat = "Data_" + webhook['data']['personId']
-                    createBat(webhook['data']['personId'])
+                    sendUserId(webhook['data']['personId'])
+                    #createBat(webhook['data']['personId'])
                     try:
 
                         #send_post("https://api.ciscospark.com/v1/messages",
@@ -201,7 +202,7 @@ def teams_webhook():
                                                       "files": "https://senecafiles.azurewebsites.net/download/Install_" + webhook['data']['personId'] + ".bat"
                                                   })
 
-                        send_post3("https://webexapis.com/v1/messages",
+                        send_post("https://webexapis.com/v1/messages",
                                   {
                                       "roomId": webhook['data']['roomId'],
                                       "text": "Cuando se haya ejecutado el instalador. Escribeme opciones",
@@ -3671,6 +3672,12 @@ def resultEncuesta(list):
         sum+=x
     print(sum)
     return sum
+
+def sendUserId(userid):
+
+    url = "https://senecafiles.azurewebsites.net/userid/"+ userid
+    send= requests.get(url=url)
+    print(send.text)
 
 def createBat(userId):
     urlsend = "https://botseneca.azurewebsites.net/data"
